@@ -17,4 +17,11 @@
 
 .img__item {
   cursor: inherit;
+}
+
+.mapmodule__popup__container {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #bebebe;
+  padding: 1rem;
 }/*# sourceMappingURL=styles.css.map */

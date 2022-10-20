@@ -9,6 +9,7 @@ import block5 from "../asset/Building 01/01-05.png";
 import block6 from "../asset/Building 01/01-06.png";
 import block7 from "../asset/Building 01/01-07.png";
 import block8 from "../asset/Building 01/01-08.png";
+import MapModuleItem from "./MapModuleItem";
 
 const img_array = [
   { id: 1, img: block1, x: 0, y: 0 },
@@ -77,13 +78,7 @@ const Map = () => {
               ref={nodeRef}
               style={{ display: "inline-block", cursor: "move" }}
             >
-              <img
-                id={record.id}
-                src={record.img}
-                alt=""
-                height={20}
-                className="img__item"
-              />
+              <MapModuleItem data={record} />
             </div>
           </Draggable>
         ))}
