@@ -24,4 +24,8 @@
   border-radius: 5px;
   box-shadow: 0 0 5px #bebebe;
   padding: 1rem;
+}
+
+.test__popup__onhover:hover {
+  z-index: 1000000000000000000 !important;
 }/*# sourceMappingURL=styles.css.map */

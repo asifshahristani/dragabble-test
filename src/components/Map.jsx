@@ -73,6 +73,7 @@ const Map = () => {
             key={record.id}
             nodeRef={nodeRef}
             onStop={handleStop}
+            className="test__popup__onhover"
           >
             <div
               ref={nodeRef}
