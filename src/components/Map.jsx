@@ -12,14 +12,14 @@ import block8 from "../asset/Building 01/01-08.png";
 import MapModuleItem from "./MapModuleItem";
 
 const img_array = [
-  { id: 1, img: block1, x: 0, y: 0 },
-  { id: 2, img: block2, x: 0, y: 0 },
-  { id: 3, img: block3, x: 0, y: 0 },
-  { id: 4, img: block4, x: 0, y: 0 },
-  { id: 5, img: block5, x: 0, y: 0 },
-  { id: 6, img: block6, x: 0, y: 0 },
-  { id: 7, img: block7, x: 0, y: 0 },
-  { id: 8, img: block8, x: 0, y: 0 },
+  { id: 1, img: block1, name: "block 1" },
+  { id: 2, img: block2, name: "block 2" },
+  { id: 3, img: block3, name: "block 3" },
+  { id: 4, img: block4, name: "block 4" },
+  { id: 5, img: block5, name: "block 5" },
+  { id: 6, img: block6, name: "block 6" },
+  { id: 7, img: block7, name: "block 7" },
+  { id: 8, img: block8, name: "block 8" },
 ];
 
 const Map = () => {
