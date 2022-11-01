@@ -1,12 +1,12 @@
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 import Map from "./components/Map";
 
 function App() {
   return (
     <div>
-      <div>
+      {/* <div>
         <Toaster position="top-center" />
-      </div>
+      </div> */}
       <Map />
     </div>
   );

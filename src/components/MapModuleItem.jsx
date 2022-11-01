@@ -1,6 +1,6 @@
 // import Tippy from "@tippyjs/react";
 import React from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 // import MapModuleItemPopup from "./MapModuleItemPopup";
 
 const MapModuleItem = ({ data }) => {
@@ -19,12 +19,12 @@ const MapModuleItem = ({ data }) => {
       alt=""
       height={20}
       className="img__item"
-      onClick={() => {
-        toast(data.name, {
-          // icon: "👏",
-          duration: 1000,
-        });
-      }}
+      // onClick={() => {
+      //   toast(data.name, {
+      //     // icon: "👏",
+      //     duration: 1000,
+      //   });
+      // }}
     />
     // </Tippy>
   );
