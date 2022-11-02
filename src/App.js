@@ -1,15 +1,11 @@
 // import { Toaster } from "react-hot-toast";
-import Map from "./components/Map";
+// import AddTools from "./components/AddTools";
+// import Map from "./components/Map";
+// import SideTools from "./components/SideTools";
+import AppLayout from "./components/AppLayout";
 
 function App() {
-  return (
-    <div>
-      {/* <div>
-        <Toaster position="top-center" />
-      </div> */}
-      <Map />
-    </div>
-  );
+  return <AppLayout />;
 }
 
 export default App;

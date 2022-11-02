@@ -1,2 +1,18 @@
 @import "./components/Map";
 @import "./components/MapModuleItemPopup";
+@import "./components/AddTools";
+@import "./components/SideTools";
+
+// ******************  General Styles
+
+.btn {
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+}
+
+.btn-primary {
+  background-color: dodgerblue;
+  color: white;
+}

@@ -22,11 +22,12 @@ const img_array = [
   { id: 8, img: block8, name: "block 8" },
 ];
 
-const Map = () => {
+const Map = ({ rects }) => {
   const [positions, setPositions] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
 
   const nodeRef = useRef(null);
+  const nodeRef1 = useRef(null);
 
   useEffect(() => {
     const existingDivPositions = JSON.parse(
@@ -73,7 +74,7 @@ const Map = () => {
             key={record.id}
             nodeRef={nodeRef}
             onStop={handleStop}
-            className="test__popup__onhover"
+            // className="test__popup__onhover"
           >
             <div
               ref={nodeRef}
@@ -81,6 +82,34 @@ const Map = () => {
             >
               <MapModuleItem data={record} />
             </div>
+          </Draggable>
+        ))}
+
+        {rects.map((record) => (
+          <Draggable
+            defaultPosition={
+              positions === null
+                ? { x: 0, y: 0 }
+                : !positions[record.name]
+                ? { x: 0, y: 0 }
+                : { x: positions[record.name].x, y: positions[record.name].y }
+            }
+            position={null}
+            key={record.name}
+            nodeRef={nodeRef1}
+            onStop={handleStop}
+            // className="test__popup__onhover"
+          >
+            <div
+              ref={nodeRef1}
+              style={{
+                display: "inline-block",
+                cursor: "move",
+                height: record.height,
+                width: record.width,
+                backgroundColor: "rgba(108, 163, 245, 0.3)",
+              }}
+            ></div>
           </Draggable>
         ))}
       </div>

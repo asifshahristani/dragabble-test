@@ -1,0 +1,15 @@
+.add-tools__container {
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+
+.add-tools__input {
+  padding: 0.35rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+
+.add-tools__input:focus {
+  outline: 0;
+  box-shadow: 0 0 7px rgba(108, 163, 245, 0.3);
+}

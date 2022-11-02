@@ -1,8 +1,8 @@
 .map__container {
   margin: 0 auto;
   margin-top: 1.5rem;
-  height: 560px;
-  width: 800px;
+  height: 500px;
+  width: 700px;
   padding: 0;
   position: relative;
 }
@@ -26,6 +26,30 @@
   padding: 1rem;
 }
 
-.test__popup__onhover:hover {
-  z-index: 1000000000000000000 !important;
+.add-tools__container {
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+
+.add-tools__input {
+  padding: 0.35rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+
+.add-tools__input:focus {
+  outline: 0;
+  box-shadow: 0 0 7px rgba(108, 163, 245, 0.3);
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+}
+
+.btn-primary {
+  background-color: dodgerblue;
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
