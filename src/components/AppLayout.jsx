@@ -16,8 +16,8 @@ const AppLayout = () => {
         onAddRect={(newRect) => setRects([...rects, newRect])}
       />
 
-      <div>
-        <SideTools />
+      <div className="main-part__container">
+        <SideTools rects={rects} />
         <Map rects={rects} />
       </div>
     </div>

@@ -42,6 +42,22 @@
   box-shadow: 0 0 7px rgba(108, 163, 245, 0.3);
 }
 
+.side-tools__container {
+  padding: 1rem;
+  width: 250px;
+  background-color: #f8f8f8;
+  border-top: 2px solid #fff;
+}
+
+.side-tools__rect__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-part__container {
+  display: flex;
+}
+
 .btn {
   border: 0;
   outline: 0;

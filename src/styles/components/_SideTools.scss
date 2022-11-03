@@ -1,0 +1,12 @@
+.side-tools__container {
+  // border: 1px solid #888;
+  padding: 1rem;
+  width: 250px;
+  background-color: #f8f8f8;
+  border-top: 2px solid #fff;
+}
+
+.side-tools__rect__items {
+  display: flex;
+  justify-content: space-between;
+}
