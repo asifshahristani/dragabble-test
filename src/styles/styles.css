@@ -54,6 +54,15 @@
   justify-content: space-between;
 }
 
+.side-tools__group__form {
+  margin-top: 2rem;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .main-part__container {
   display: flex;
 }
@@ -68,4 +77,14 @@
 .btn-primary {
   background-color: dodgerblue;
   color: white;
+}
+
+.side-tools__group__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=styles.css.map */

@@ -17,3 +17,13 @@
   background-color: dodgerblue;
   color: white;
 }
+
+.side-tools__group__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

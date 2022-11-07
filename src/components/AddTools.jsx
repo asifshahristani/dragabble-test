@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const AddTools = ({ rects, onAddRect }) => {
   const [height, setHeight] = useState("");
@@ -7,6 +8,14 @@ const AddTools = ({ rects, onAddRect }) => {
   const [isAddFormShown, setIsAddFormShown] = useState(false);
 
   const handleAdd = () => {
+    const index = rects.findIndex(
+      (rect) => rect.name.toLowerCase() === name.toLowerCase()
+    );
+    if (index !== -1)
+      return toast.error(
+        "Please add a unique name, name: " + name + " already used"
+      );
+
     onAddRect({ height: +height, width: +width, name, x: 0, y: 0 });
     reset();
   };
