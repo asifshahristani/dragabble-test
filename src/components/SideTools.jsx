@@ -43,19 +43,23 @@ const SideTools = ({ rects, groups, onAddGroup, onGroupVisibilityToggle }) => {
 
   return (
     <div className="side-tools__container">
-      {rects.map((rect) => (
-        <div key={rect.name} className="side-tools__rect__items">
-          <span>{rect.name}</span>
+      {rects.map((rect) => {
+        if (rect.group !== "") return <span key={rect.name}></span>;
 
-          {/* <span>s</span> */}
-          <input
-            type="checkbox"
-            name={rect.name}
-            id=""
-            onChange={(e) => handleOnCheckRect(e, rect)}
-          />
-        </div>
-      ))}
+        return (
+          <div key={rect.name} className="side-tools__rect__items">
+            <span>{rect.name}</span>
+
+            {/* <span>s</span> */}
+            <input
+              type="checkbox"
+              name={rect.name}
+              id=""
+              onChange={(e) => handleOnCheckRect(e, rect)}
+            />
+          </div>
+        );
+      })}
 
       <div className="side-tools__group__form">
         {/* {!showGroupForm && (
