@@ -16,7 +16,7 @@ const AddTools = ({ rects, onAddRect }) => {
         "Please add a unique name, name: " + name + " already used"
       );
 
-    onAddRect({ height: +height, width: +width, name, x: 0, y: 0 });
+    onAddRect({ height: +height, width: +width, name, group: "", x: 0, y: 0 });
     reset();
   };
 

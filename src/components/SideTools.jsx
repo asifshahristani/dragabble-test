@@ -1,7 +1,9 @@
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const SideTools = ({ rects, groups, onAddGroup }) => {
+const SideTools = ({ rects, groups, onAddGroup, onGroupVisibilityToggle }) => {
   const [selectedRects, setSelectedRects] = useState([]);
   // const [showGroupForm, setShowGroupForm] = useState(false);
   const [name, setName] = useState("");
@@ -90,10 +92,18 @@ const SideTools = ({ rects, groups, onAddGroup }) => {
 
         {groups.length > 0 && (
           <div>
-            {groups.map((group) => (
+            <h5>Groups</h5>
+
+            {groups.map((group, index) => (
               <div className="side-tools__group__item">
                 <span>{group.name}</span>
-                <span>{group.members.length}</span>
+                {/* <span>{group.members.length}</span> */}
+                <span
+                  onClick={() => onGroupVisibilityToggle(group, index)}
+                  style={{ color: "dodgerblue", cursor: "pointer" }}
+                >
+                  <FontAwesomeIcon icon={group.visible ? faEyeSlash : faEye} />
+                </span>
               </div>
             ))}
           </div>

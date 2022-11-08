@@ -6,28 +6,59 @@ import SideTools from "./SideTools";
 const AppLayout = () => {
   const [rects, setRects] = useState([]);
   const [groups, setGroups] = useState([]);
+  const [hiddenGroups, setHiddenGroups] = useState([]);
 
   function handleOnAddGroup(group) {
     const groupMembers = [...group.members];
 
     let newRects = [...rects];
-    newRects = newRects.filter((rect) => {
+    newRects = newRects.map((rect) => {
+      const newRect = { ...rect };
       const index = groupMembers.findIndex(
         (member) => member.name === rect.name
       );
-      return index === -1 ? true : false;
+
+      if (index !== -1) newRect.group = group.name;
+
+      return newRect;
     });
 
     setRects(newRects);
     setGroups((pre) => [...pre, group]);
   }
 
-  function getRectsToPrint() {
-    let newRects = [...rects];
-    groups.forEach((group) => {
-      if (group.visible) {
-        newRects = [...newRects, ...group.members];
+  function handleGroupVisibilityToggle(group, index) {
+    const newGroup = { ...group };
+
+    if (newGroup.visible) {
+      setHiddenGroups((pre) => [...pre, group.name]);
+    } else if (!newGroup.visible && hiddenGroups.length > 0) {
+      const newHiddenGroups = [...hiddenGroups];
+      const groupIndex = newHiddenGroups.findIndex(
+        (groupName) => groupName === newGroup.name
+      );
+
+      if (groupIndex !== -1) {
+        newHiddenGroups.splice(groupIndex, 1);
+        setHiddenGroups(newHiddenGroups);
       }
+    }
+
+    newGroup.visible = !newGroup.visible;
+    const newGroups = [...groups];
+    newGroups[index] = newGroup;
+    setGroups(newGroups);
+  }
+
+  function getRectsToPrint() {
+    if (hiddenGroups.length === 0) return rects;
+
+    let newRects = [...rects];
+    newRects = newRects.filter((rect) => {
+      const index = hiddenGroups.findIndex(
+        (groupName) => groupName === rect.group
+      );
+      return index === -1 ? true : false;
     });
 
     return newRects;
@@ -48,6 +79,7 @@ const AppLayout = () => {
           rects={rects}
           groups={groups}
           onAddGroup={handleOnAddGroup}
+          onGroupVisibilityToggle={handleGroupVisibilityToggle}
         />
         <Map rects={getRectsToPrint()} />
       </div>
