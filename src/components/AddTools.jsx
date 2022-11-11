@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const AddTools = ({ rects, onAddRect }) => {
-  const [height, setHeight] = useState("");
-  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState(50);
+  const [width, setWidth] = useState(50);
   const [name, setName] = useState("");
   const [isAddFormShown, setIsAddFormShown] = useState(false);
 
@@ -26,8 +26,8 @@ const AddTools = ({ rects, onAddRect }) => {
 
   const reset = () => {
     setIsAddFormShown(false);
-    setHeight("");
-    setWidth("");
+    setHeight(50);
+    setWidth(50);
     setName("");
   };
 
@@ -39,7 +39,7 @@ const AddTools = ({ rects, onAddRect }) => {
           className="btn btn-primary"
           onClick={() => setIsAddFormShown(true)}
         >
-          Add Rectangle
+          Add Shape
         </button>
       )}
 
@@ -53,7 +53,7 @@ const AddTools = ({ rects, onAddRect }) => {
             onChange={(e) => setName(e.target.value)}
           />
           &nbsp; &nbsp;
-          <input
+          {/* <input
             type="text"
             className="add-tools__input"
             placeholder="Height"
@@ -68,7 +68,7 @@ const AddTools = ({ rects, onAddRect }) => {
             value={width}
             onChange={(e) => setWidth(e.target.value)}
           />
-          &nbsp; &nbsp;
+          &nbsp; &nbsp; */}
           <button type="button" className="btn btn-primary" onClick={handleAdd}>
             Add
           </button>

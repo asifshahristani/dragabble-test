@@ -19,6 +19,12 @@
   cursor: inherit;
 }
 
+.map__resizeable__container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .mapmodule__popup__container {
   background-color: white;
   border-radius: 5px;
